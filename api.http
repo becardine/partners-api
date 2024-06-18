@@ -1,9 +1,10 @@
 GET http://localhost:3000/events
 
 ###
+# @name createEvent
 POST http://localhost:3000/events
 Content-Type: application/json
-
+  
 {
   "name": "My Event",
   "description": "This is a great event",
@@ -12,10 +13,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/events/d36767cd-e73a-40e7-88d1-e7403bec1bec
+@eventId = {{ createEvent.response.body.id }}
 
 ###
-PATCH http://localhost:3000/events/d36767cd-e73a-40e7-88d1-e7403bec1bec
+GET http://localhost:3000/events/{{ eventId }}
+
+###
+PATCH http://localhost:3000/events/{{ eventId }}
 Content-Type: application/json
 
 {
@@ -26,4 +30,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/events/6c2ef089-d8e3-40ed-b3a6-f2f411cc1de2
+DELETE http://localhost:3000/events/{{ eventId }}
