@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { SpotStatus } from '@prisma/client'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { PrismaService } from '../prisma/prisma.service'
 import { CreateSpotDto } from './dto/create-spot.dto'
 import { UpdateSpotDto } from './dto/update-spot.dto'
 
